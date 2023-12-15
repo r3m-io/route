@@ -14,7 +14,7 @@ trait Init {
     /**
      * @throws Exception
      */
-    public function register (): void
+    public function register(): void
     {
         $object = $this->object();
         $options = App::options($object);
@@ -28,6 +28,7 @@ trait Init {
         ];
         $class = 'System.Installation';
         $response = $node->record($class, $node->role_system(), $record_options);
+        d($response);
         if(
             $response &&
             array_key_exists('node', $response)
