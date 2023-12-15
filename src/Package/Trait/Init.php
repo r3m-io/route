@@ -20,7 +20,7 @@ trait Init {
         $options = App::options($object);
         $node = new Node($object);
         $record_options = [
-            'where' => [
+            'filter' => [
                 'value' => $object->request('package'),
                 'attribute' => 'name',
                 'operator' => '===',
