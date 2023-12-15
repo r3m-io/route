@@ -20,10 +20,12 @@ trait Init {
         $options = App::options($object);
         $node = new Node($object);
         $record_options = [
-            'filter' => [
-                'value' => $object->request('package'),
-                'attribute' => 'name',
-                'operator' => '===',
+            'where' => [
+                [
+                    'value' => $object->request('package'),
+                    'attribute' => 'name',
+                    'operator' => '===',
+                ]
             ]
         ];
         $class = 'System.Installation';
