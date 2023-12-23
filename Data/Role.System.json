@@ -28,6 +28,14 @@
       "#class": "Account.Permission"
     },
     {
+      "name": "System:Route:delete",
+      "#class": "Account.Permission"
+    },
+    {
+      "name": "System:Route:delete.many",
+      "#class": "Account.Permission"
+    },
+    {
       "name": "System:Route:read",
       "#class": "Account.Permission"
     },
