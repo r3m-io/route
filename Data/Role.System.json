@@ -60,7 +60,7 @@
       "#class": "Account.Permission"
     },
     {
-      "name": "System:Route:property.remove",
+      "name": "System:Route:property.delete",
       "#class": "Account.Permission"
     },
     {
