@@ -60,6 +60,10 @@
       "#class": "Account.Permission"
     },
     {
+      "name": "System:Route:property.remove",
+      "#class": "Account.Permission"
+    },
+    {
       "name": "System:Route:list",
       "#class": "Account.Permission"
     },
