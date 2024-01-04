@@ -29,7 +29,6 @@ trait Main {
             return;
         }
         foreach($list as $key => $record){
-            ddd($record);
             if(property_exists($record, 'priority')){
                 echo $key . '('. $record->priority .')' . PHP_EOL;
                 if(property_exists($record, 'controller')){
@@ -37,6 +36,12 @@ trait Main {
                 }
                 if(property_exists($record, 'path')){
                     echo '  Path: ' . $record->path . PHP_EOL;
+                }
+                if(property_exists($record, 'redirect')){
+                    echo '  Redirect: ' . $record->redirect . PHP_EOL;
+                }
+                if(property_exists($record, 'url')){
+                    echo '  Url: ' . $record->url . PHP_EOL;
                 }
                 if(property_exists($record, 'method')){
                     echo '  Method: ' .  implode(', ', $record->method) . PHP_EOL;
