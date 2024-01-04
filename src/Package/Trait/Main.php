@@ -4,8 +4,11 @@ namespace Package\R3m\Io\Route\Trait;
 use R3m\Io\Config;
 
 use R3m\Io\Module\Core;
+use R3m\Io\Module\Dir;
+use R3m\Io\Module\File;
 
 use R3m\Io\Exception\ObjectException;
+use R3m\Io\Module\Route;
 
 trait Main {
 
@@ -28,7 +31,7 @@ trait Main {
         }
         foreach($list as $key => $record){
             if(property_exists($record, 'priority')){
-                echo $key . '('. $record->priority .')' . PHP_EOL;
+                echo $key . ' ('. $record->priority .')' . PHP_EOL;
                 if(property_exists($record, 'controller')){
                     echo '  Controller: ' . $record->controller . PHP_EOL;
                 }
@@ -51,7 +54,8 @@ trait Main {
     /**
      * @throws ObjectException
      */
-    public function restart($options=[]){
+    public function restart($options=[]): void
+    {
         $options = Core::object($options, Core::OBJECT_OBJECT);
         $object = $this->object();
         $object->config('ramdisk.is.disabled', true);
