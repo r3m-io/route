@@ -63,6 +63,7 @@ trait Main {
         $temp_dir = $object->config('framework.dir.temp');
         $dir = new Dir();
         $read = $dir->read($temp_dir, true);
+        ddd($read);
         if($read){
             foreach($read as $file){
                 if($file->type === Dir::TYPE){
