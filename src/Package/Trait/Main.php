@@ -18,7 +18,10 @@ trait Main {
     {
         $options = Core::object($options, Core::OBJECT_OBJECT);
         $object = $this->object();
-        ddd($object);
+
+        $route = $object->route();
+
+        ddd($route);
 
 
         /*
