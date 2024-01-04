@@ -9,7 +9,7 @@ Submodule: {{$request.submodule|uppercase.first}}
 
 {{/if}}
 
-{{binary()}} {{$request.package}} {{$request.module}} info
-{{binary()}} {{$request.package}} {{$request.module}} list
-{{binary()}} {{$request.package}} {{$request.module}} restart
-{{binary()}} {{$request.package}} {{$request.module}} setup
+{{binary()}} {{$request.package}} info
+{{binary()}} {{$request.package}} list
+{{binary()}} {{$request.package}} restart
+{{binary()}} {{$request.package}} setup
