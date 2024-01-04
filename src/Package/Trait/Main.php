@@ -63,14 +63,13 @@ trait Main {
         $temp_dir = $object->config('framework.dir.temp');
         $dir = new Dir();
         $read = $dir->read($temp_dir, true);
-        ddd($read);
         if($read){
             foreach($read as $file){
                 if($file->type === Dir::TYPE){
                     if($posix_id > 0){
                         if(
                             stristr($file->url, strtolower(Route::NAME)) !== false &&
-                            stristr($file->url, $posix_id) !== false &&
+                            stristr($file->url, $object->config('ds') . $posix_id . $object->config('ds')) !== false &&
                             File::exist($file->url)
                         ){
                             Dir::remove($file->url);
