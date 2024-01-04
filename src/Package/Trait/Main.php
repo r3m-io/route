@@ -23,6 +23,7 @@ trait Main {
         $route = $object->route();
 
         foreach($route as $key => $record){
+            ddd($record);
             if(property_exists($record, 'priority')){
                 echo $key . '('. $record->priority .')' . PHP_EOL;
                 if(property_exists($record, 'controller')){
