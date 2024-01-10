@@ -50,42 +50,4 @@ trait Main {
             }
         }
     }
-
-    /**
-     * @throws ObjectException
-     */
-    public function restart($options=[]): void
-    {
-        $options = Core::object($options, Core::OBJECT_OBJECT);
-        $object = $this->object();
-        $object->config('ramdisk.is.disabled', true);
-        $posix_id = $object->config(Config::POSIX_ID);
-        $temp_dir = $object->config('framework.dir.temp');
-        $dir = new Dir();
-        $read = $dir->read($temp_dir, true);
-        if($read){
-            foreach($read as $file){
-                if($file->type === Dir::TYPE){
-                    if($posix_id > 0){
-                        if(
-                            stristr($file->url, strtolower(Route::NAME)) !== false &&
-                            stristr($file->url, $object->config('ds') . $posix_id . $object->config('ds')) !== false &&
-                            File::exist($file->url)
-                        ){
-                            Dir::remove($file->url);
-                            echo 'Removed: ' . $file->url . PHP_EOL;
-                        }
-                    } else {
-                        if(
-                            stristr($file->url, strtolower(Route::NAME)) !== false &&
-                            file_exists($file->url)
-                        ){
-                            Dir::remove($file->url);
-                            echo 'Removed: ' . $file->url . PHP_EOL;
-                        }
-                    }
-                }
-            }
-        }
-    }
 }
