@@ -30,7 +30,8 @@ class Cli extends Controller {
      * @throws ObjectException
      * @throws Exception
      */
-    public static function run(App $object){
+    public static function run(App $object): mixed
+    {
         $node = $object->request(0);
         $scan = Cli::scan($object);
         $module = $object->parameter($object, $node, 1);
