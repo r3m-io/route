@@ -1,14 +1,9 @@
 <?php
 namespace Package\R3m\Io\Route\Trait;
 
-use R3m\Io\Config;
-
 use R3m\Io\Module\Core;
-use R3m\Io\Module\Dir;
-use R3m\Io\Module\File;
 
 use R3m\Io\Exception\ObjectException;
-use R3m\Io\Module\Route;
 
 trait Main {
 
